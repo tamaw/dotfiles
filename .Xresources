@@ -1,0 +1,38 @@
+Xft.antialias: true
+
+! special
+*.foreground:   #f4faff
+*.background:   #0f133c
+*.cursorColor:  #f4faff
+
+! black
+*.color0:       #0f133c
+*.color8:       #055cb9
+
+! red
+*.color1:       #ff4a72
+*.color9:       #ff4a72
+
+! green
+*.color2:       #72ffbe
+*.color10:      #72ffbe
+
+! yellow
+*.color3:       #ffb2a8
+*.color11:      #ffb2a8
+
+! blue
+*.color4:       #469aff
+*.color12:      #469aff
+
+! magenta
+*.color5:       #ca9aff
+*.color13:      #ca9aff
+
+! cyan
+*.color6:       #64cbff
+*.color14:      #64cbff
+
+! white
+*.color7:       #adc4d6
+*.color15:      #f4faff

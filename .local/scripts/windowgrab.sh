@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+selection=$(slop -f "-i %i -g %g")
+sleep .1
+shotgun $selection - | xclip -t 'image/png' -selection clipboard

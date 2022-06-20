@@ -1,0 +1,37 @@
+Config { font = "xft:SauceCodePro Nerd Font:size=7:bold:antialias=true"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , lowerOnStart = True
+	   , iconRoot = "/home/tama/.xmonad/xpm"
+	   , pickBroadest = True
+       , commands = [ Run Cpu [ "-t"       , " <total>%"
+							  , "-L"       , "85"
+							  , "-H"	   , "95"
+							  ] 10
+				    , Run CpuFreq [ "-t"   , "<cpu0>Ghz" ] 10
+				    , Run Memory [ "-t"    , " <usedratio>% <used>M" ] 10
+					, Run CoreTemp [ "-t"  , "<core0>°C"] 50
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+					, Run Battery  [ "-t"  , "<acstatus> <left>% (<timeleft>)"
+								  , "-L"   , "15"
+								  , "-H"   , "75"
+								  , "--"   
+								  , "-O"   , "⚡"
+								  , "-i"   , ""
+								  , "-o"   , ""
+								  , "--lows"     , ""
+								  , "--mediums"  , ""
+								  , "--highs"    , ""
+								  , "-a"   , "notify-send -u critical ' Charge Laptop Now!'"
+								  ] 50
+					, Run Com "uname" ["-s", "-r"] "" 0
+					, Run Alsa "default" "Master" [ "-t", " <volume>%" ]
+					, Run DynNetwork [ "-t", "<tx>Kb <rx>Kb" ] 10
+					, Run Wireless ""  [ "-t", "直 <ssid> <quality>%" ] 50
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "<icon=haskell_20.xpm/> | %StdinReader% }%date%{ %alsa:default:Master% | %wi% | %memory% | %cpu% %cpufreq% %coretemp% | %battery% | <fc=#469aff> </fc>%uname% "
+       }

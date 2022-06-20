@@ -1,0 +1,5 @@
+:set -Wall
+:set -XOverloadedStrings
+:set prompt "\ESC[5;95;185m\STXλ>\ESC[m\STX "
+:set prompt-cont " | "
+:set -ferror-spans -freverse-errors -fprint-expanded-synonyms
